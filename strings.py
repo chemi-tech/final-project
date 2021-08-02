@@ -12,15 +12,26 @@ Example: ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 import pytest
 
 def no_duplicates(a_string):
-    pass
+    res = ''.join(sorted(set(a_string)))
+    return res
 
 
 def reversed_words(a_string):
-    pass
+    words = a_string.split(' ')
+    tmp = ' '.join(reversed(words))
+    res =tmp.split(' ')
+    return res
 
 
 def four_char_strings(a_string):
-    pass
+     def divide_chunks(l, n):
+        # looping till length l
+        for i in range(0, len(l), n):
+            yield l[i:i + n]
+     n=4
+     x = list(divide_chunks(a_string, n))
+     return x
+
 
 
 def test_no_duplicates():
@@ -37,11 +48,19 @@ def test_four_char_strings():
     s = 'monty pythons flying circus'
     assert four_char_strings(s) == ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 
+#a_string = str(input("Insert a String: "))
+#print(no_duplicates(a_string))
+#print(reversed_words(a_string))
+#print(four_char_strings(a_string))
 
+"""
 def main():
     return pytest.main(__file__)
 
 
 if __name__ == '__main__':
     main()
-    
+    """
+test_no_duplicates()
+test_reversed_words()
+test_four_char_strings()
