@@ -1,8 +1,8 @@
 """We have an existing dictionary that maps US states to their capitals.
-1. Print the state capital of Idaho
-2. Print all states.
-3. Print all capitals.
-4. Create a single string 'Alabama -> Montgomery, Alaska -> Juneau, ...'
+1. Print the state capital of Idaho - Done.
+2. Print all states - Done.
+3. Print all capitals - Done.
+4. Create a single string 'Alabama -> Montgomery, Alaska -> Juneau, ...' - Done.
 5. Ensure the string you created in 4. is alphabetically sorted by state
 7. Now we want to add the reverse look up, given the name of a capital what state
 is it in?
@@ -71,40 +71,43 @@ STATES_CAPITALS = {
 
 
 def capital_of_Idaho():
-    print("the state of idaho is:"+STATES_CAPITALS['Idaho'])
+    coi=STATES_CAPITALS['Idaho']
+    print ('The capital of Idaho is: ' + coi)
 
 def all_states():
-   print("ALl States:")
-   num=0
-   for yakov in STATES_CAPITALS.keys():
-       num += 1
-       print(num , ': ' , yakov)
-   print("Total States:" ,num)
+    for i in STATES_CAPITALS.keys():
+        print(i)
 
 def all_capitals():
-    print("All Capitals:")
-    num=0
-    for moshe in STATES_CAPITALS.values():
-        num += 1
-        print(num , ': ' ,moshe)
-    print("Total Capitals:" ,num)
+    for val in STATES_CAPITALS.values():
+        print(val)
+
 
 def states_capitals_string():
-    print("String States & Capitals:")
+    sortednames=sorted(STATES_CAPITALS.keys(), key=lambda x:x.lower())
     sc_string=""
-    for moshe,yakov in STATES_CAPITALS.items():
-        sc_string += moshe + " -> " + yakov + ", "
+    for i in sortednames:
+        values=STATES_CAPITALS[i]
+        sc_string += i + ' -> ' + values + ', '
     print(sc_string)
 
-
-
-def get_state():
-    cap= str(input("enter your capital to get state: "))
+def get_state(capital):
+    if capital == '':
+        raise KeyError('param is not set')
     msg="sorry your state is not found"
+    st_list=[]
     for c,d in STATES_CAPITALS.items():
-        if cap == d:
-            msg="Your State is: " + c
-    print(msg)
+        if capital == d:
+          msg = c
+          st_list.append(c)
+    if msg=="sorry your state is not found":
+        print(msg)
+    elif len(st_list)>1:
+        print ("you have more than one option, the options is: " + str(st_list))
+        msg =' '.join(st_list)
+    else:
+        print ("Your State is: " + msg)
+    return msg
 
 
 
@@ -120,21 +123,30 @@ def test_state_to_capital_unknown():
 def test_capital_to_state():
     assert 'Wyoming' == get_state('Cheyenne')
 
+
+def test_capital_to_state_unknown():
+    with pytest.raises(KeyError):
+        get_state('')
+
+"""
+def main():
+    return pytest.main(__file__)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
+"""
+test_state_to_capital()
+test_state_to_capital_unknown()
+test_capital_to_state()
+test_capital_to_state_unknown()
+"""
+
 capital_of_Idaho()
 all_states()
 all_capitals()
 states_capitals_string()
-get_state()
-#
-#def test_capital_to_state_unknown():
- #   with pytest.raises(KeyError):
- #      get_state('')
 
-
-#def main():
- #   return pytest.main(__file__)
-
-
-#if __name__ == '__main__':
- #   sys.exit(main())
-   # """
+capital= str(input("enter your capital to get state: "))
+get_state(capital)
+"""
