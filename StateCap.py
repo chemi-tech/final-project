@@ -3,12 +3,12 @@
 2. Print all states - Done.
 3. Print all capitals - Done.
 4. Create a single string 'Alabama -> Montgomery, Alaska -> Juneau, ...' - Done.
-5. Ensure the string you created in 4. is alphabetically sorted by state
+5. Ensure the string you created in 4. is alphabetically sorted by state - Done.
 7. Now we want to add the reverse look up, given the name of a capital what state
 is it in?
-Implement the function def get_state(capital): below so it returns the state.
+Implement the function def get_state(capital): below so it returns the state - Done.
 GOTCHAS: What happens if two states have the same capital name, how do you
-handle that?
+handle that? it will give the last one because its a for loop, so we add a list that collect all of the posible answers and give them to user.
 
 """
 import sys
