@@ -48,19 +48,21 @@ def test_four_char_strings():
     s = 'monty pythons flying circus'
     assert four_char_strings(s) == ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 
-#a_string = str(input("Insert a String: "))
-#print(no_duplicates(a_string))
-#print(reversed_words(a_string))
-#print(four_char_strings(a_string))
 
-"""
 def main():
     return pytest.main(__file__)
 
 
 if __name__ == '__main__':
     main()
-    """
+
+
+"""
+a_string = str(input("Insert a String: "))
+print(no_duplicates(a_string))
+print(reversed_words(a_string))
+print(four_char_strings(a_string))
 test_no_duplicates()
 test_reversed_words()
 test_four_char_strings()
+"""
