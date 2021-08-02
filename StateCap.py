@@ -128,7 +128,7 @@ def test_capital_to_state_unknown():
     with pytest.raises(KeyError):
         get_state('')
 
-"""
+
 def main():
     return pytest.main(__file__)
 
@@ -140,7 +140,7 @@ test_state_to_capital()
 test_state_to_capital_unknown()
 test_capital_to_state()
 test_capital_to_state_unknown()
-"""
+
 
 capital_of_Idaho()
 all_states()
