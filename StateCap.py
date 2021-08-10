@@ -3,12 +3,19 @@
 2. Print all states - Done.
 3. Print all capitals - Done.
 4. Create a single string 'Alabama -> Montgomery, Alaska -> Juneau, ...' - Done.
-5. Ensure the string you created in 4. is alphabetically sorted by state - Done.
+5. Ensure the string you created in 4. is alphabetically sorted by state
+    - Added sorted list for the states, and with for loop on this list added the
+    keys to another list with the values from the dictionary.
+
 7. Now we want to add the reverse look up, given the name of a capital what state
-is it in?
-Implement the function def get_state(capital): below so it returns the state - Done.
+is it in? - Done.
+Implement the function def get_state(capital): below so it returns the state.
 GOTCHAS: What happens if two states have the same capital name, how do you
-handle that? it will give the last one because its a for loop, so we add a list that collect all of the posible answers and give them to user.
+handle that?
+    -we are using a for loop to do that so the last state will be returned...
+    so we added a list that collects all of the possible answers and then if the
+    length of this list is grater than one the user will get  all of the options
+    {'Texasa' : 'Austin'} was added to the dictionary to ensure that it's work.
 
 """
 import sys
@@ -133,14 +140,15 @@ def main():
     return pytest.main(__file__)
 
 
-if __name__ == '__main__':
+if __name__ == '__StateCap__':
     sys.exit(main())
 """
+Here is the functions that we used to check our code:
+
 test_state_to_capital()
 test_state_to_capital_unknown()
 test_capital_to_state()
 test_capital_to_state_unknown()
-
 
 capital_of_Idaho()
 all_states()

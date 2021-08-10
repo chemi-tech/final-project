@@ -3,10 +3,13 @@
 Create a function that returns a sorted string with no duplicate characters
 (keep any whitespace):
 Example: ' cfghilmnoprstuy'
+    Done
 Create a function that returns the words in reverse order:
 Example: ['circus', 'flying', 'pythons', 'monty']
+    Done
 Create a function that returns a list of 4 character strings:
 Example: ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
+    Done
 ### git comment
 """
 import pytest
@@ -53,16 +56,15 @@ def main():
     return pytest.main(__file__)
 
 
-if __name__ == '__main__':
+if __name__ == '__string__':
     main()
+"""   
+test_no_duplicates()
+test_reversed_words()
+test_four_char_strings()
 
-
-"""
 a_string = str(input("Insert a String: "))
 print(no_duplicates(a_string))
 print(reversed_words(a_string))
 print(four_char_strings(a_string))
-test_no_duplicates()
-test_reversed_words()
-test_four_char_strings()
 """
